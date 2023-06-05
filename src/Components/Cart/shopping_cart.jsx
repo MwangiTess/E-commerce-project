@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './ShoppingCart.css';
 
 function ShoppingCart() {
   const [cartItems, setCartItems] = useState([]);
@@ -37,9 +38,9 @@ function ShoppingCart() {
   );
 
   return (
-    <div>
-      <h2>Shopping Cart</h2>
-      <div>
+    <div className="shopping-cart-container">
+      <h2 className="shopping-cart-title">Shopping Cart</h2>
+      <div className="search-bar">
         <input
           type="text"
           value={searchTerm}
@@ -49,17 +50,17 @@ function ShoppingCart() {
         <button onClick={() => console.log('Search:', searchTerm)}>Search</button>
       </div>
       {filteredCartItems.length === 0 ? (
-        <p>No matching items found in your cart.</p>
+        <p className="no-matching-items">No matching items found in your cart.</p>
       ) : (
-        <ul>
+        <ul className="cart-items-list">
           {filteredCartItems.map((item) => (
-            <li key={item.id}>
-              <h3>{item.title}</h3>
-              <p>Price: ${item.price}</p>
-              <p>Rating: {item.rating.rate}</p>
-              <p>{item.rating.count} reviews</p>
-              <img src={item.image} alt={item.title} />
-              <button onClick={() => removeItemFromCart(item.id)}>Remove</button>
+            <li className="cart-item" key={item.id}>
+              <h3 className="item-title">{item.title}</h3>
+              <p className="item-price">Price: ${item.price}</p>
+              <p className="item-rating">Rating: {item.rating.rate}</p>
+              <p className="item-review-count">{item.rating.count} reviews</p>
+              <img className="item-image" src={item.image} alt={item.title} />
+              <button className="remove-button" onClick={() => removeItemFromCart(item.id)}>Remove</button>
             </li>
           ))}
         </ul>
