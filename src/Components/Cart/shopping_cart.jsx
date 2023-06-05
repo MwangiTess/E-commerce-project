@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 function ShoppingCart() {
   const [cartItems, setCartItems] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetchCartItems();
@@ -27,14 +28,31 @@ function ShoppingCart() {
     setCartItems(updatedCartItems);
   };
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredCartItems = cartItems.filter(item =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
       <h2>Shopping Cart</h2>
-      {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+      <div>
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={handleSearch}
+          placeholder="Search..."
+        />
+        <button onClick={() => console.log('Search:', searchTerm)}>Search</button>
+      </div>
+      {filteredCartItems.length === 0 ? (
+        <p>No matching items found in your cart.</p>
       ) : (
         <ul>
-          {cartItems.map((item) => (
+          {filteredCartItems.map((item) => (
             <li key={item.id}>
               <h3>{item.title}</h3>
               <p>Price: ${item.price}</p>
