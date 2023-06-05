@@ -1,6 +1,6 @@
 import Categories from "./Categories";
 import MainPage from "./MainPage";
-import SlideCard from "./SlideCard";
+import Sliders from "./Slide";
 import "./landing.css"
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
             <section className="home">
             <div className="container d_flex">
                 <Categories />
-                <SlideCard />
+                <Sliders />
                 <MainPage />
             </div>
             </section>
