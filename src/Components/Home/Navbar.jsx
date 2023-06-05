@@ -1,8 +1,11 @@
 import React from 'react';
+import Header from '../Home/Header.jsx';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
+    <div>
+      <Header />
     <nav>
       <div className="options">
         <ul>
@@ -18,6 +21,7 @@ const Navbar = () => {
         </ul>
       </div>
     </nav>
+    </div>
   );
 };
 

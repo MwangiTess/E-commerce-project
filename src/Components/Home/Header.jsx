@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './home.css'; 
 
-const Home = () => {
+const Header = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (e) => {
@@ -23,10 +23,9 @@ const Home = () => {
         </div>
       </nav>
       <div>
-        <p>This is my home page</p>
       </div>
     </div>
   );
 };
 
-export default Home;
+export default Header;

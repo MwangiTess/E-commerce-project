@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from '../Home/Home.jsx';
 import About from '../Home/About.jsx';
 import Navbar from '../Home/Navbar.jsx';
+import Home from '../LandingPage/Home.jsx';
 import ShoppingCart from '../Cart/shopping_cart.jsx';
 import './App.css';
 
