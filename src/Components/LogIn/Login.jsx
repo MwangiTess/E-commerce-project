@@ -6,8 +6,9 @@ function Login() {
 
   return (
     <div className="Layout">
+      <img src="/images/cart.jpg" alt="cart"/>
       <div className="container">
-        <h1 id='wetto'>Wetto Shop</h1>
+        <h1 id='wetto'>WETTO SHOP</h1>
         <h1 id="welcome">Hi, Welcome Back! 👋</h1>
         <div id="loginBox">
           <label htmlFor="email" id="e-label">
@@ -34,7 +35,6 @@ function Login() {
           Don't have an account? <a href='/signin' id='signUp'>Sign Up</a>
         </p>
       </div>
-      <img src="/images/cart.jpg" alt="cart"/>
     </div>
   );
 }
