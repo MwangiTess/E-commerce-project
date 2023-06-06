@@ -1,18 +1,12 @@
-import Categories from "./Categories";
-import MainPage from "./MainPage";
-import Sliders from "./Slide";
-import "./landing.css"
+import Products from "../Product/Products";
+import Carousel from "./Carousel";
+// import "./landing.css"
 
 const Home = () => {
     return (
         <div>
-            <section className="home">
-            <div className="container d_flex">
-                <Categories />
-                <Sliders />
-                <MainPage />
-            </div>
-            </section>
+            <Carousel/>
+            <Products />
         </div>
     );
 }
