@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './home.css'; 
+import { Link } from 'react-router-dom';
+import './Header.css';
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -9,22 +10,21 @@ const Header = () => {
   };
 
   return (
-    <div>
-      <nav className="navbar">
-        <div className="navbar-brand">Wetto Shop</div>
-        <div className="search-bar">
-          <input
-            type="text"
-            value={searchTerm}
-            onChange={handleSearch}
-            placeholder="Search..."
-          />
-          <button onClick={() => console.log('Search:', searchTerm)}>Search</button>
-        </div>
-      </nav>
-      <div>
+    <div className="header">
+      <div className="options-container">
+        <ul className="options">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/cart">Cart</Link>
+          </li>
+        </ul>
       </div>
-    </div>
+   </div>
   );
 };
 

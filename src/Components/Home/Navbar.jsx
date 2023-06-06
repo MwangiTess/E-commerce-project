@@ -1,14 +1,15 @@
 import React from 'react';
-import Header from '../Home/Header.jsx';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <div>
-      <Header />
-    <nav>
-      <div className="options">
-        <ul>
+    <nav className="navbar">
+      <div className="logo-container">
+        <Link to="/" className="logo">Wetto Shop</Link>
+      </div>
+      <div className="options-container">
+        <ul className="options">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -20,8 +21,17 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      <div className="search-container">
+        <input type="text" placeholder="Search..." />
+        <button className="search-button">Search</button>
+      </div>
+      <div className="actions-container">
+        <button className="account-button">Account</button>
+        <Link to="/cart" className="cart-button">
+          Cart
+        </Link>
+      </div>
     </nav>
-    </div>
   );
 };
 
