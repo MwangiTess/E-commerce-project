@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -59,9 +60,9 @@ const Products = () => {
                     Rating: {product.rating && product.rating.rate}
                     <i className="fas fa-star"></i>
                   </p>
-                  <a href="#" className="btn btn-outline-dark">
+                  <NavLink to = {`/products/${product.id}`} className="btn btn-outline-dark">
                     Buy Now
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>
