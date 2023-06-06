@@ -6,21 +6,24 @@ const Navbar = () => {
   return (
     <div>
       <Header />
-    <nav>
-      <div className="options">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/cart">Cart</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <nav>
+        <div className="options">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/products">Product</Link>
+            </li>
+            <li>
+              <Link to="/cart">Cart</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
   );
 };
