@@ -1,3 +1,25 @@
+    WETTO SHOP 
+
+Welcome to WETTO SHOP E-Commerce App! 
+This application is designed to provide a platform for online shopping and facilitate the buying and selling of products.
+
+
+Features
+User Registration and Authentication: Users can sign up, log in, and manage their accounts.
+
+Landing page: Browse through a wide range of products available for purchase.
+
+Product Search: Search for products based on keywords, categories, or other filters.
+
+Shopping Cart: Add products to your cart and manage your shopping items.
+
+Checkout Process: Proceed to checkout, provide shipping details, and complete the purchase.
+
+Order Tracking: Track the status of customer orders and view order history.
+
+Product Ratings: Rate products based on users experience.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
