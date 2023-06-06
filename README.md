@@ -9,7 +9,7 @@ User Registration and Authentication: Users can sign up, log in, and manage thei
 
 Landing page: Browse through a wide range of products available for purchase.
 
-Product Search: Search for products based on keywords, categories, or other filters.
+Product page: Search for products based on keywords, categories, or other filters.
 
 Shopping Cart: Add products to your cart and manage your shopping items.
 
@@ -18,6 +18,17 @@ Checkout Process: Proceed to checkout, provide shipping details, and complete th
 Order Tracking: Track the status of customer orders and view order history.
 
 Product Ratings: Rate products based on users experience.
+
+
+Technologies Used
+
+Ruby on Rails and Sinatra: A web application framework used for building the backend of the app.
+
+
+HTML/CSS: Markup and styling languages for building the user interface.
+
+
+REACT: Used for client-side interactivity and enhanced user experience.
 
 
 # Getting Started with Create React App
@@ -90,4 +101,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# E-commerce-project
+
+License
+The E-Commerce App is open-source and released under the MIT License.
+
+Contact
+If you have any questions, suggestions, or issues, please contact our support team
