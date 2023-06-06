@@ -1,6 +1,8 @@
+import React from 'react';
+
 const Carousel = () => {
   return (
-    <div className='carousel-container'>
+    <div className="carousel-container">
       <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -11,19 +13,19 @@ const Carousel = () => {
           <div className="carousel-item active">
             <img src="/images/shoes.jpg" className="d-block w-100" alt="Shoes" height="500px" style={{ objectFit: 'cover' }} />
             <div className="carousel-caption d-none d-md-block">
-              <h5>NEW SEASON ARRIAVL</h5>
+              <h5>NEW SEASON ARRIVAL</h5>
               <p>CHECK OUT ALL THE TRENDS</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="/images/clothes.jpg" className="d-block w-100" alt="clothes" height="500px" style={{ objectFit: 'cover' }} />
+            <img src="/images/clothes.jpg" className="d-block w-100" alt="Clothes" height="500px" style={{ objectFit: 'cover' }} />
             <div className="carousel-caption d-none d-md-block">
               <h5>NEW SEASON ARRIVAL</h5>
               <p>CHECK OUT ALL THE TRENDS</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="/images/watch.jpg" className="d-block w-100" alt="Wactches" height="500px" style={{ objectFit: 'cover' }} />
+            <img src="/images/watch.jpg" className="d-block w-100" alt="Watches" height="500px" style={{ objectFit: 'cover' }} />
             <div className="carousel-caption d-none d-md-block">
               <h5>NEW SEASON ARRIVAL</h5>
               <p>CHECK OUT ALL THE TRENDS</p>
@@ -44,4 +46,3 @@ const Carousel = () => {
 };
 
 export default Carousel;
-
