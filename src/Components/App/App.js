@@ -6,8 +6,6 @@ import Home from '../LandingPage/Home.jsx';
 import Products from '../LandingPage/Products.jsx';
 import ShoppingCart from '../Cart/shopping_cart.jsx';
 import Product from '../LandingPage/Product.jsx';
-import Login from '../LogIn/Login.jsx';
-import SignUp from '../SignUp/SignUp.jsx';
 import './App.css';
 import LogIn from '../LogIn/LogIn.jsx';
 
@@ -22,8 +20,7 @@ function App() {
             <Route path="/cart" element={<ShoppingCart />} />
             <Route path="/products/*" element={<Products />} />
             <Route path="/products/:id" element={<Product />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signin" element={<SignUp />} />
+            <Route path="/login" element={<LogIn />} />
           </Routes>
         </div>
         <Footer />
