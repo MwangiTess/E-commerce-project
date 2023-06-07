@@ -5,9 +5,7 @@ This application is designed to provide a platform for online shopping and facil
 
 
 Features
-    User Registration and Authentication: Users can sign up, log in, and manage their accounts.
-
-    Landing page: Browse through a wide range of products available for purchase.
+    User Registration and Authentication: Users can sign up, log in, and manage their account through a wide range of products available for purchase.
 
     Product page: Search for products based on keywords, categories, or other filters.
 
