@@ -5,18 +5,20 @@ import Navbar from '../Home/Navbar.jsx';
 import Home from '../LandingPage/Home.jsx';
 import ShoppingCart from '../Cart/shopping_cart.jsx';
 import './App.css';
+import LogIn from '../LogIn/LogIn.jsx';
 
 function App() {
   return (
     <BrowserRouter>
-    <div>
-      <Navbar/>
-      <Routes>
-      <Route path="/" element={ <Home />} />
-      <Route path="/about" element={ <About />} />
-      <Route path="/cart" element={<ShoppingCart />} /> 
-      </Routes>
-      </div>
+      <div>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={ <Home />} />
+          <Route path="/about" element={ <About />} />
+          <Route path="/cart" element={<ShoppingCart />} /> 
+          <Route path="/login" element={<LogIn />} />
+        </Routes>
+        </div>
     </BrowserRouter>
   );
  }
