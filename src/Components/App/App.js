@@ -1,31 +1,34 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from '../Home/Navbar.jsx';
+import Footer from '../Home/Footer.jsx';
 import Home from '../LandingPage/Home.jsx';
 import Products from '../LandingPage/Products.jsx';
 import Cart from '../Cart/shopping_cart.jsx';
 import Product from '../LandingPage/Product.jsx';
-import Login from '../LogIn/Login.jsx';
-import SignUp from '../SignUp/SignUp.jsx';
 import './App.css';
+import LogIn from '../LogIn/LogIn.jsx';
+import SignUp from '../SignUp/SignUp.jsx';
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div className="app-container">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/products/*" element={<Products />} />
-          <Route path="/products/:id" element={<Product />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signin' element={<SignUp />} />
-        </Routes>
+        <div className="content-container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<ShoppingCart />} />
+            <Route path="/products/*" element={<Products />} />
+            <Route path="/products/:id" element={<Product />} />
+            <Route path="/login" element={<LogIn />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
     </BrowserRouter>
   );
 }
 
 export default App;
-

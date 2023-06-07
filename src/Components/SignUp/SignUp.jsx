@@ -2,9 +2,9 @@ import React from 'react';
 import './SignUp.css';
 
 function SignUp(){
+
     return (
         <div className='Layout'>
-            <img src="/images/cart.jpg" alt="cart"/>
             <div className="container">
                 <h1 id="shopName">WETTO SHOP</h1>
                 <h1 id="createAccount">Create an account</h1>
@@ -39,9 +39,10 @@ function SignUp(){
                      </button>
                 </div>
                 <p id='account'>
-                    Already have an account? <a href='/login' id='LogIn'>Login</a>
+                    Already have an account? <span id='LogIn'>Login</span>
                 </p>
             </div>
+            <img src="/images/cart.jpg" alt="cart"/>
         </div>
     );
 }
