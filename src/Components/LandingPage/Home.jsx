@@ -1,6 +1,5 @@
-import Products from "../Product/Products";
 import Carousel from "./Carousel";
-// import "./landing.css"
+import Products from "./Products";
 
 const Home = () => {
     return (

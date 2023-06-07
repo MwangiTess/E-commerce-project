@@ -1,3 +1,40 @@
+    WETTO SHOP 
+
+Welcome to WETTO SHOP E-Commerce App! 
+This application is designed to provide a platform for online shopping and facilitate the buying and selling of products.
+
+
+Features
+    User Registration and Authentication: Users can sign up, log in, and manage their accounts.
+
+    Landing page: Browse through a wide range of products available for purchase.
+
+    Product page: Search for products based on keywords, categories, or other filters.
+
+    Shopping Cart: Add products to your cart and manage your shopping items.
+
+    Checkout Process: Proceed to checkout, provide shipping details, and complete the purchase.
+
+    Product Ratings: Rate products based on users experience.
+
+
+Technologies Used
+
+   Ruby on Rails and Sinatra: A web application framework used for building the backend of the app.
+
+
+   HTML/CSS: Markup and styling languages for building the user interface.
+
+
+   REACT: Used for client-side interactivity and enhanced user experience.
+
+
+Installation
+   Clone the repository: git clone https://github.com/your-username/e-commerce-app.git
+
+   Navigate to the project directory: cd e-commerce-app
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,4 +105,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# E-commerce-project
+
+License
+   The E-Commerce App is open-source and released under the MIT License.
+
+Contact
+   If you have any questions, suggestions, or issues, please contact our support team
