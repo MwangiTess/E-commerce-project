@@ -1,0 +1,78 @@
+.Layout{
+    display: flex;
+    flex-direction: row;
+}
+
+img{
+    flex: none;
+    flex-grow: 0;
+    height: 100vh;
+    width: 50%;
+    /* border: 2px solid black; */
+}
+
+.container{
+    flex: none;
+    flex-grow: 0;
+    height: 100vh;
+    width: 50%;
+    /* border: 2px solid black; */
+}
+
+#shopName{
+    text-align: center;
+    font-family: 'Poppins';
+  }
+  
+  
+#createAccount{
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+#connect{
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+#signUpBox{
+    /* border: 1px solid red; */
+    margin-top: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-family: 'Poppins';
+    font-weight: 400;
+}
+
+.inputs{
+    background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+margin-top: 10px;
+margin-bottom: 10px;
+width: 100%;
+height: 48px;
+}
+
+#s-btn{
+    margin-top: 15px;
+margin-bottom: 20px;
+width: 100%;
+height: 48px;
+color: rgba(255, 255, 255, 0.9);;
+background: #0E64D2;
+border-radius: 5px;
+}
+
+#account{
+    position: absolute;
+    margin-left: 15%;
+    margin-top: 50px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+#LogIn{
+    color: #3356D1;
+    text-decoration-line: underline;
+}
