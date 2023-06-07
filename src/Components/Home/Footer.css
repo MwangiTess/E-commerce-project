@@ -1,0 +1,42 @@
+.footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .social-media-container {
+    margin-bottom: 10px;
+  }
+  
+  .social-media-icon {
+    color: #333;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .social-media-icon:hover {
+    color: #555;
+  }
+  
+  .contact-container,
+  .about-container,
+  .partnership-container {
+    margin-bottom: 10px;
+  }
+  
+  .contact-info,
+  .about-info,
+  .partnership-info {
+    color: #333;
+  }
+  
+  /* Additional styling can be added as needed */
+  
