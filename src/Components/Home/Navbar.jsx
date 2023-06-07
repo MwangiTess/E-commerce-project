@@ -22,9 +22,6 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about#about">About</Link> {/* Added id to link */}
-          </li>
-          <li>
             <Link to="/products">Products</Link>
           </li>
           <li>
