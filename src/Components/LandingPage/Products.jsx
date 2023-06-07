@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Products = () => {
+const Products = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -60,7 +60,10 @@ const Products = () => {
                     Rating: {product.rating && product.rating.rate}
                     <i className="fas fa-star"></i>
                   </p>
-                  <NavLink to = {`/products/${product.id}`} className="btn btn-outline-dark">
+                  <button className="btn btn-outline-dark" onClick={() => addToCart(product)}>
+                    Add to Cart
+                  </button>
+                  <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark ms-2">
                     Buy Now
                   </NavLink>
                 </div>

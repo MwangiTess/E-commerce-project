@@ -1,72 +1,63 @@
-import React, { useEffect, useState } from 'react';
-import './ShoppingCart.css';
+import React from 'react';
 
-function ShoppingCart() {
-  const [cartItems, setCartItems] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-
-  useEffect(() => {
-    fetchCartItems();
-  }, []);
-
-  const fetchCartItems = async () => {
-    try {
-      const response = await fetch('https://fakestoreapi.com/carts/userId');
-      const data = await response.json();
-      if (Array.isArray(data)) {
-        setCartItems(data);
-      } else {
-        console.log('Invalid cart items data:', data);
-        setCartItems([]);
-      }
-    } catch (error) {
-      console.log('Error fetching cart items:', error);
-    }
-  };
-  
-  const removeItemFromCart = (itemId) => {
-    const updatedCartItems = cartItems.filter(item => item.id !== itemId);
-    setCartItems(updatedCartItems);
+const Cart = ({ cartItems, removeFromCart, clearCart }) => {
+  const handleRemoveFromCart = (productId) => {
+    removeFromCart(productId);
   };
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+  const handleClearCart = () => {
+    clearCart();
   };
-
-  const filteredCartItems = cartItems.filter(item =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
   return (
-    <div className="shopping-cart-container">
-      <h2 className="shopping-cart-title">Shopping Cart</h2>
-      <div className="search-bar">
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleSearch}
-          placeholder="Search..."
-        />
-        <button onClick={() => console.log('Search:', searchTerm)}>Search</button>
+    <div>
+      <div className="container py-5">
+        <div className="row py-5">
+          <div className="col-12">
+            <h1 className="display-6 fw-bolder text-center mb-4">Shopping Cart</h1>
+            <table className="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Product</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cartItems && cartItems.length === 0 ? (
+                  <tr>
+                    <td colSpan="3" className="text-center">No items in the cart</td>
+                  </tr>
+                ) : (
+                  cartItems && cartItems.map((item) => (
+                    <tr key={item.id}>
+                      <td>{item.title}</td>
+                      <td>${item.price}</td>
+                      <td>
+                        <button className="btn btn-outline-danger btn-sm" onClick={() => handleRemoveFromCart(item.id)}>
+                          Remove
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
+            {cartItems && cartItems.length > 0 && (
+              <div className="text-center">
+                <button className="btn btn-outline-danger me-2" onClick={handleClearCart}>
+                  Clear Cart
+                </button>
+                <button className="btn btn-outline-dark">
+                  Checkout
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
-      {filteredCartItems.length === 0 ? (
-        <p className="no-matching-items">No matching items found in your cart.</p>
-      ) : (
-        <ul className="cart-items-list">
-          {filteredCartItems.map((item) => (
-            <li className="cart-item" key={item.id}>
-              <h3 className="item-title">{item.title}</h3>
-              <p className="item-price">Price: ${item.price}</p>
-              <p className="item-rating">Rating: {item.rating.rate}</p>
-              <p className="item-review-count">{item.rating.count} reviews</p>
-              <img className="item-image" src={item.image} alt={item.title} />
-              <button className="remove-button" onClick={() => removeItemFromCart(item.id)}>Remove</button>
-            </li>
-          ))}
-        </ul>
-      )}
     </div>
   );
-}
+};
 
-export default ShoppingCart;
+export default Cart;
