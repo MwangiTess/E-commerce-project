@@ -9,6 +9,7 @@ import Product from '../LandingPage/Product.jsx';
 import Login from '../LogIn/Login.jsx';
 import SignUp from '../SignUp/SignUp.jsx';
 import './App.css';
+import LogIn from '../LogIn/LogIn.jsx';
 
 function App() {
   return (
