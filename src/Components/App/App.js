@@ -4,7 +4,7 @@ import Navbar from '../Home/Navbar.jsx';
 import Footer from '../Home/Footer.jsx';
 import Home from '../LandingPage/Home.jsx';
 import Products from '../LandingPage/Products.jsx';
-import ShoppingCart from '../Cart/shopping_cart.jsx';
+import Cart from '../Cart/shopping_cart.jsx';
 import Product from '../LandingPage/Product.jsx';
 import './App.css';
 import LogIn from '../LogIn/LogIn.jsx';
