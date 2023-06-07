@@ -11,21 +11,21 @@ const Carousel = () => {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="/images/shoes.jpg" className="d-block w-100" alt="Shoes" height="500px" style={{ objectFit: 'cover' }} />
+            <img src="/images/shoes.jpg" className="d-block w-100" alt="Shoes" height="400px" style={{ objectFit: 'cover' }} />
             <div className="carousel-caption d-none d-md-block">
               <h5>NEW SEASON ARRIVAL</h5>
               <p>CHECK OUT ALL THE TRENDS</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="/images/clothes.jpg" className="d-block w-100" alt="Clothes" height="500px" style={{ objectFit: 'cover' }} />
+            <img src="/images/clothes.jpg" className="d-block w-100" alt="Clothes" height="400px" style={{ objectFit: 'cover' }} />
             <div className="carousel-caption d-none d-md-block">
               <h5>NEW SEASON ARRIVAL</h5>
               <p>CHECK OUT ALL THE TRENDS</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="/images/watch.jpg" className="d-block w-100" alt="Watches" height="500px" style={{ objectFit: 'cover' }} />
+            <img src="/images/watch.jpg" className="d-block w-100" alt="Watches" height="400px" style={{ objectFit: 'cover' }} />
             <div className="carousel-caption d-none d-md-block">
               <h5>NEW SEASON ARRIVAL</h5>
               <p>CHECK OUT ALL THE TRENDS</p>
