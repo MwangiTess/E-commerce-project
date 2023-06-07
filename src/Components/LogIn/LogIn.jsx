@@ -1,5 +1,6 @@
 import React from 'react';
 import './LogIn.css';
+import { NavLink } from 'react-router-dom';
 
 function LogIn() {
 
@@ -30,10 +31,10 @@ function LogIn() {
           <button id='l-btn'>Login</button>
         </div>
         <p id='account'>
-          Don't have an account? <a id='signUp'>Sign Up</a>
+          Don't have an account? <NavLink to = "/signin">Sign Up</NavLink>
         </p>
       </div>
-      <img src="/images/cart.jpg" alt="cart"/>
+      <img className='image' src="/images/cart.jpg" alt="cart"/>
     </div>
   );
 }

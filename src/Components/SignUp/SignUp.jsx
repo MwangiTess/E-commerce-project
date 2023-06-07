@@ -1,5 +1,6 @@
 import React from 'react';
 import './SignUp.css';
+import { NavLink } from 'react-router-dom';
 
 function SignUp(){
 
@@ -39,10 +40,10 @@ function SignUp(){
                      </button>
                 </div>
                 <p id='account'>
-                    Already have an account? <span id='LogIn'>Login</span>
+                    Already have an account? < NavLink to = "/login">Login</NavLink>
                 </p>
             </div>
-            <img src="/images/cart.jpg" alt="cart"/>
+            <img className='image' src="/images/cart.jpg" alt="cart"/>
         </div>
     );
 }

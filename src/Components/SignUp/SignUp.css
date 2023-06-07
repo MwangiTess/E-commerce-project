@@ -3,7 +3,7 @@
     flex-direction: row;
 }
 
-img{
+.image{
     flex: none;
     flex-grow: 0;
     height: 100vh;
