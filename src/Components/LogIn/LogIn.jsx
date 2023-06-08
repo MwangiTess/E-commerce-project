@@ -53,7 +53,7 @@ function LogIn() {
             Login
           </button>
         </form>
-        <p id='account'>
+        <p id='l-account'>
           Don't have an account? <NavLink to = "/signup">Sign Up</NavLink>
         </p>
       </div>

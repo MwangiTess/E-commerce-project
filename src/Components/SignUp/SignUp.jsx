@@ -62,7 +62,7 @@ function SignUp(){
                         Sign Up
                      </button>
                 </form>
-                <p id='account'>
+                <p id='s-account'>
                     Already have an account? < NavLink to = "/login">Login</NavLink>
                 </p>
             </div>
