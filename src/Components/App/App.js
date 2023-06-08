@@ -10,8 +10,8 @@ import SignUp from '../SignUp/SignUp.jsx';
 import Footer from '../Home/Footer.jsx';
 
 function App() {
-  
   const [cartItems, setCartItems] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const addToCart = (product) => {
     setCartItems([...cartItems, product]);
@@ -25,23 +25,38 @@ function App() {
   const clearCart = () => {
     setCartItems([]);
   };
-  
+
+  const handleSearch = (searchQuery) => {
+    setSearchTerm(searchQuery);
+  };
+
   return (
     <BrowserRouter>
       <div className="app-container">
-        <Navbar />
+        <Navbar onSearch={handleSearch} />
         <div className="content-container">
           <Routes>
-            <Route path="/" element={<Home addToCart={addToCart} />} />
-            <Route path="/cart" element={<Cart
-              cartItems={cartItems}
-              removeFromCart={removeFromCart}
-              clearCart={clearCart}
-            />} />
-            <Route path="/products/*" element={<Products addToCart={addToCart} />} />
-            <Route path="/products/:id" element={<Product addToCart={addToCart} />}/>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/cart"
+              element={
+                <Cart
+                  cartItems={cartItems}
+                  removeFromCart={removeFromCart}
+                  clearCart={clearCart}
+                />
+              }
+            />
+            <Route
+              path="/products/*"
+              element={<Products addToCart={addToCart} searchTerm={searchTerm} />}
+            />
+            <Route
+              path="/products/:id"
+              element={<Product addToCart={addToCart} />}
+            />
             <Route path="/login" element={<LogIn />} />
-            <Route path="/signin" element={<SignUp />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </div>
         <Footer />

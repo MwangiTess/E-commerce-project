@@ -1,20 +1,22 @@
 .Layout{
     display: flex;
     flex-direction: row;
+    height: 70vh;
   }
   
-  .image{
+  .l-image{
     flex: none;
     flex-grow: 0;
-    height: 100vh;
+    height: 100%;
     width: 50%;
+    /* object-fit: cover; */
     /* border: 2px solid black; */
   }
   
   .container{
     flex: none;
     flex-grow: 0;
-    height: 100vh;
+    height: 100%;
     width: 50%;
     /* border: 2px solid black; */
   }
@@ -43,26 +45,34 @@
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 10px;
-  margin-top: 7px;
-  margin-bottom: 10px;
-  width: 100%;
-  height: 40px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 40px;
   }
   
   #l-btn{
-  margin-top: 15px;
+  margin-top: 20px;
   margin-bottom: 20px;
   width: 100%;
   height: 48px;
   color: rgba(255, 255, 255, 0.9);;
   background: #0E64D2;
   border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
   }
+
+  #l-btn:hover {
+    background-color: #000dc7;
+  }
+
   
-  #account{
+  #l-account{
     position: absolute;
     margin-left: 15%;
-    margin-top: 50px;
+    margin-top: 20px;
     font-weight: 600;
     font-size: 16px;
   }
@@ -70,4 +80,4 @@
   #signUp{
     color: #3356D1;
     text-decoration-line: underline;
-    }
+  }
