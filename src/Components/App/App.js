@@ -56,7 +56,7 @@ function App() {
               element={<Product addToCart={addToCart} />}
             />
             <Route path="/login" element={<LogIn />} />
-            <Route path="/signin" element={<SignUp />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </div>
         <Footer />
