@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Products = () => {
+const Products = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -47,21 +48,26 @@ const Products = () => {
             Electronics
           </button>
         </div>
-        <div className="row">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
           {filteredProducts.map((product) => (
-            <div className="col-md-3 mb-4" key={product.id}>
+            <div className="col mb-4" key={product.id}>
               <div className="card h-100 text-center p-4">
-                <img src={product.image} className="card-img-top" alt={product.title} height="250px" />
+                <img src={product.image} className="card-img-top" alt={product.title} />
                 <div className="card-body">
-                  <h5 className="card-title mb-0">{product.title.substring(0, 12)}</h5>
+                  <h5 className="card-title mb-0">{product.title.substring(0, 18)}</h5>
                   <p className="card-text lead fw-bold">${product.price}</p>
                   <p className="lead fw-bolder">
                     Rating: {product.rating && product.rating.rate}
                     <i className="fas fa-star"></i>
                   </p>
-                  <a href="#" className="btn btn-outline-dark">
-                    Buy Now
-                  </a>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <button className="btn btn-outline-dark" onClick={() => addToCart(product)}>
+                      Add to Cart
+                    </button>
+                    <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark ms-2">
+                      Buy Now
+                    </NavLink>
+                  </div>
                 </div>
               </div>
             </div>
@@ -73,9 +79,9 @@ const Products = () => {
 
   return (
     <div>
-      <div className="container my-5 py-5">
+      <div className="container-lg my-4 py-4">
         <div className="row">
-          <div className="col-12 mb-5">
+          <div className="col-12 mb-4">
             <h1 className="display-6 fw-bolder text-center">Latest Products</h1>
             <hr />
           </div>
