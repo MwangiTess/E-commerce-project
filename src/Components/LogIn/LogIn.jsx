@@ -1,12 +1,11 @@
 import React from 'react';
-import './Login.css';
+import './LogIn.css';
+import { NavLink } from 'react-router-dom';
 
-function Login() {
-
+function LogIn() {
 
   return (
     <div className="Layout">
-      <img src="/images/cart.jpg" alt="cart"/>
       <div className="container">
         <h1 id='wetto'>WETTO SHOP</h1>
         <h1 id="welcome">Hi, Welcome Back! 👋</h1>
@@ -32,11 +31,12 @@ function Login() {
           <button id='l-btn'>Login</button>
         </div>
         <p id='account'>
-          Don't have an account? <a href='/signin' id='signUp'>Sign Up</a>
+          Don't have an account? <NavLink to = "/signin">Sign Up</NavLink>
         </p>
       </div>
+      <img className='image' src="/images/cart.jpg" alt="cart"/>
     </div>
   );
 }
 
-export default Login;
+export default LogIn;
