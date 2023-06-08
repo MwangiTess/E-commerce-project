@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
+const Navbar = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const location = useLocation();
 
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    onSearch(searchTerm);
+    const searchQuery = searchTerm.trim();
+    const searchPath = searchQuery ? `/products?search=${searchQuery}` : '/products';
+    if (location.pathname !== searchPath) {
+      window.location.href = searchPath;
+    }
   };
 
   return (
@@ -30,23 +37,20 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="search-container">
-        <input type="text" placeholder="Search..." />
-        <button className="search-button">Search</button>
+        <form onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button type="submit" className="search-button">
+            Search
+          </button>
+        </form>
       </div>
       <div className="actions-container">
-        <button className="account-button" onClick={toggleDropdown}>
-          Account
-        </button>
-        {showDropdown && (
-          <ul className="dropdown-menu">
-            <li>
-              <Link to="/signin">Sign In</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-          </ul>
-        )}
+        <button className="account-button">Account</button>
         <Link to="/cart" className="cart-button">
           Cart
         </Link>
@@ -56,3 +60,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
