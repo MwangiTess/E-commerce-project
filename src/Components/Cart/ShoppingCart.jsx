@@ -1,12 +1,38 @@
-import React from 'react';
-
-const Cart = ({ cartItems, removeFromCart, clearCart }) => {
+const Cart = ({ cartItems, removeFromCart, setCartItems, clearCart }) => {
+  
   const handleRemoveFromCart = (productId) => {
+    const updatedCartItems = cartItems.filter((item) => item.id !== productId);
+    setCartItems(updatedCartItems);
     removeFromCart(productId);
   };
 
   const handleClearCart = () => {
+    setCartItems([]);
     clearCart();
+  };
+
+  const handleQuantityChange = (productId, quantity) => {
+    const updatedCartItems = cartItems.map((item) => {
+      if (item.id === productId) {
+        return {
+          ...item,
+          quantity: quantity,
+        };
+      }
+      return item;
+    });
+
+    setCartItems(updatedCartItems);
+  };
+
+  const getTotalQuantity = () => {
+    const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+    return totalQuantity;
+  };
+
+  const getTotalAmount = () => {
+    const totalAmount = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    return totalAmount;
   };
 
   return (
@@ -20,21 +46,44 @@ const Cart = ({ cartItems, removeFromCart, clearCart }) => {
                 <tr>
                   <th scope="col">Product</th>
                   <th scope="col">Price</th>
+                  <th scope="col">Quantity</th>
                   <th scope="col">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {cartItems && cartItems.length === 0 ? (
                   <tr>
-                    <td colSpan="3" className="text-center">No items in the cart</td>
+                    <td colSpan="4" className="text-center">
+                      No items in the cart
+                    </td>
                   </tr>
                 ) : (
-                  cartItems && cartItems.map((item) => (
+                  cartItems &&
+                  cartItems.map((item) => (
                     <tr key={item.id}>
                       <td>{item.title}</td>
                       <td>${item.price}</td>
                       <td>
-                        <button className="btn btn-outline-danger btn-sm" onClick={() => handleRemoveFromCart(item.id)}>
+                        <button
+                          className="btn btn-outline-dark btn-sm me-2"
+                          onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
+                          disabled={item.quantity === 1}
+                        >
+                          -
+                        </button>
+                        {item.quantity}
+                        <button
+                          className="btn btn-outline-dark btn-sm ms-2"
+                          onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
+                        >
+                          +
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          className="btn btn-outline-danger btn-sm"
+                          onClick={() => handleRemoveFromCart(item.id)}
+                        >
                           Remove
                         </button>
                       </td>
@@ -48,9 +97,9 @@ const Cart = ({ cartItems, removeFromCart, clearCart }) => {
                 <button className="btn btn-outline-danger me-2" onClick={handleClearCart}>
                   Clear Cart
                 </button>
-                <button className="btn btn-outline-dark">
-                  Checkout
-                </button>
+                <button className="btn btn-outline-dark">Checkout</button>
+                <p>Total Quantity: {getTotalQuantity()}</p>
+                <p>Total Amount: ${getTotalAmount()}</p>
               </div>
             )}
           </div>
