@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import Cart from '../Cart/ShoppingCart';
+//import Cart from '../Cart/ShoppingCart';
 
 const Product = ({ addToCart }) => {
   const { id } = useParams();
@@ -10,7 +10,7 @@ const Product = ({ addToCart }) => {
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const response = await fetch(`http://localhost:9292/products/${id}`);
       const data = await response.json();
       setProduct(data);
       setLoading(false);
@@ -60,7 +60,6 @@ const Product = ({ addToCart }) => {
           {loading ? <Loading /> : <ShowProduct />}
         </div>
       </div>
-      <Cart addToCart={addToCart} />
     </div>
   );
 };

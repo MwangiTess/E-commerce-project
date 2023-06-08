@@ -10,7 +10,7 @@ import SignUp from '../SignUp/SignUp.jsx';
 import Footer from '../Home/Footer.jsx';
 
 function App() {
-
+  
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (product) => {
@@ -32,7 +32,7 @@ function App() {
         <Navbar />
         <div className="content-container">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home addToCart={addToCart} />} />
             <Route path="/cart" element={<Cart
               cartItems={cartItems}
               removeFromCart={removeFromCart}
