@@ -63,7 +63,7 @@ const Navbar = ({ onSearch }) => {
         {showDropdown && (
           <ul className="dropdown-menu">
             <li>
-              <Link to="/signup">Sign In</Link>
+              <Link to="/signup">Sign Up</Link>
             </li>
             <li>
               <Link to="/login">Log In</Link>
