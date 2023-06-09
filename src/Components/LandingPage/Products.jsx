@@ -63,10 +63,7 @@ const Products = ({ addToCart }) => {
                     Rating: {product.rating.rate}
                     <i className="fas fa-star"></i>
                   </p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <button className="btn btn-outline-dark" onClick={() => addToCart(product)}>
-                      Add to Cart
-                    </button>
+                  <div className="d-flex justify-content-center align-items-center">
                     <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark ms-2">
                       Buy Now
                     </NavLink>
