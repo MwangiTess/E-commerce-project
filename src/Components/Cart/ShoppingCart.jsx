@@ -1,5 +1,6 @@
+import React from 'react';
+
 const Cart = ({ cartItems, removeFromCart, setCartItems, clearCart }) => {
-  
   const handleRemoveFromCart = (productId) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== productId);
     setCartItems(updatedCartItems);
@@ -47,13 +48,14 @@ const Cart = ({ cartItems, removeFromCart, setCartItems, clearCart }) => {
                   <th scope="col">Product</th>
                   <th scope="col">Price</th>
                   <th scope="col">Quantity</th>
+                  <th scope="col">Total Quantity</th>
                   <th scope="col">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {cartItems && cartItems.length === 0 ? (
                   <tr>
-                    <td colSpan="4" className="text-center">
+                    <td colSpan="5" className="text-center">
                       No items in the cart
                     </td>
                   </tr>
@@ -79,6 +81,7 @@ const Cart = ({ cartItems, removeFromCart, setCartItems, clearCart }) => {
                           +
                         </button>
                       </td>
+                      <td>${item.price * item.quantity}</td>
                       <td>
                         <button
                           className="btn btn-outline-danger btn-sm"
@@ -98,8 +101,9 @@ const Cart = ({ cartItems, removeFromCart, setCartItems, clearCart }) => {
                   Clear Cart
                 </button>
                 <button className="btn btn-outline-dark">Checkout</button>
+                <hr />
                 <p>Total Quantity: {getTotalQuantity()}</p>
-                <p>Total Amount: ${getTotalAmount()}</p>
+                <p>Total Amount: ${getTotalAmount()}.00</p>
               </div>
             )}
           </div>

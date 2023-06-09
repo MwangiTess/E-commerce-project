@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [showDropdown, setShowDropdown] = useState(false);
+  const navigate = useNavigate();
   const location = useLocation();
 
   const handleSearch = (e) => {
@@ -12,8 +14,13 @@ const Navbar = ({ onSearch }) => {
     const searchQuery = searchTerm.trim();
     const searchPath = searchQuery ? `/products?search=${searchQuery}` : '/products';
     if (location.pathname !== searchPath) {
-      window.location.href = searchPath;
+      navigate(searchPath);
+      setSearchTerm('');
     }
+  };
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
   };
 
   return (
@@ -50,7 +57,19 @@ const Navbar = ({ onSearch }) => {
         </form>
       </div>
       <div className="actions-container">
-        <button className="account-button">Account</button>
+        <button className="account-button" onClick={toggleDropdown}>
+          Account
+        </button>
+        {showDropdown && (
+          <ul className="dropdown-menu">
+            <li>
+              <Link to="/signup">Sign In</Link>
+            </li>
+            <li>
+              <Link to="/login">Log In</Link>
+            </li>
+          </ul>
+        )}
         <Link to="/cart" className="cart-button">
           Cart
         </Link>
@@ -60,4 +79,3 @@ const Navbar = ({ onSearch }) => {
 };
 
 export default Navbar;
-
