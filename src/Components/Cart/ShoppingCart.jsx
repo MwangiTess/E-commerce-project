@@ -98,8 +98,9 @@ const Cart = ({ cartItems, removeFromCart, setCartItems, clearCart }) => {
                   Clear Cart
                 </button>
                 <button className="btn btn-outline-dark">Checkout</button>
+                <hr />
                 <p>Total Quantity: {getTotalQuantity()}</p>
-                <p>Total Amount: ${getTotalAmount()}</p>
+                <p>Total Amount: ${getTotalAmount()}.00</p>
               </div>
             )}
           </div>
